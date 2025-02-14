@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página en Construcción</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #0267B2, #04A6ED);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .construction-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+            max-width: 90%;
+            width: 600px;
+        }
+        .construction-container h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            font-weight: 700;
+            animation: slideInDown 1s ease-out;
+        }
+        .construction-container p {
+            font-size: 1.1em;
+            margin-bottom: 1.5em;
+            line-height: 1.6;
+            animation: slideInUp 1s ease-out;
+        }
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #ffffff;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        .floating-shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out;
+        }
+        .shape1 { width: 80px; height: 80px; top: 5%; left: 5%; }
+        .shape2 { width: 120px; height: 120px; top: 70%; right: 5%; }
+        .shape3 { width: 60px; height: 60px; bottom: 5%; left: 10%; }
+        .construction-icon {
+            font-size: 3em;
+            margin-top: 15px;
+        }
+        .logo {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        @media (max-width: 768px) {
+            .construction-container {
+                padding: 1.5rem;
+            }
+            .construction-container h1 {
+                font-size: 2em;
+            }
+            .construction-container p {
+                font-size: 1em;
+            }
+            .loader {
+                width: 40px;
+                height: 40px;
+            }
+            .construction-icon {
+                font-size: 2.5em;
+            }
+            .logo {
+                max-width: 120px;
+            }
+            .floating-shape {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-shape shape1"></div>
+    <div class="floating-shape shape2"></div>
+    <div class="floating-shape shape3"></div>
+    <div class="construction-container">
+        <img src="logo.png" alt="Logo de NovaSecure" class="logo">
+        <h1>¡Sitio en Construcción!</h1>
+        <p>NovaSecure está trabajando arduamente para mejorar tu experiencia. Disculpa las molestias y regresa pronto.</p>
+        <div class="loader"></div>
+        <div class="construction-icon">🚧</div>
+    </div>
+</body>
+</html>
